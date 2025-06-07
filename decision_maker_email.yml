@@ -4,7 +4,7 @@
   gather_facts: no
 
   vars_files:
-    - "../vars/vault.yml"  # ServiceNow credentials stored securely
+    - "vault.yml"  # ServiceNow credentials stored securely
 
   vars:
     server_cis_list: "{{ server_cis.split(',') }}"  # Convert comma-separated input to list
