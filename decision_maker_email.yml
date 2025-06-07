@@ -1,0 +1,31 @@
+---
+- name: Fetch Decision Makers and Send Emails
+  hosts: localhost
+  gather_facts: no
+
+  vars_files:
+    - "../vars/vault.yml"  # ServiceNow credentials stored securely
+
+  vars:
+    server_cis_list: "{{ server_cis.split(',') }}"  # Convert comma-separated input to list
+    email_content: "{{ email_content }}"
+    cc_emails: "{{ cc_emails }}"
+    python_script: "decision_maker_email.py"  # Replace with your script filename
+
+  tasks:
+    - name: Run Python script to fetch Decision Makers and send emails
+      shell: >-
+        python {{ playbook_dir }}/{{ python_script }}
+        -n '{{ snow_username }}'
+        -k '{{ snow_password }}'
+        --server '{{ item }}'
+        --message "{{ email_content }}"
+        --cc "{{ cc_emails }}"
+      loop: "{{ server_cis_list }}"
+      register: result
+      ignore_errors: yes
+
+    - name: Show script output (if any)
+      debug:
+        var: result.stdout_lines
+      when: result.stdout_lines is defined
