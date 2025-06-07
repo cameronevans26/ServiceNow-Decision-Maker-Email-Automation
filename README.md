@@ -91,4 +91,4 @@ If no decision makers are found, the script prints:
 
 ### Security Notes
 1. This project is intended as a template. Always adapt it to your environment.
-2. Do not commit vault.yml or any sensitive credentials to version control.
+2. Do not commit `vault.yml` or any sensitive credentials to version control.
