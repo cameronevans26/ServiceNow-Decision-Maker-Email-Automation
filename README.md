@@ -35,8 +35,8 @@ vault.yml # Encrypted vault file with ServiceNow credentials (not in repo)
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/servicenow-email-automation.git
-cd servicenow-email-automation
+git clone https://github.com/yourusername/ServiceNow-Decision-Maker-Email-Automation.git
+cd ServiceNow-Decision-Maker-Email-Automation
 ```
 
 ### 2️⃣ Configure ServiceNow and SMTP
