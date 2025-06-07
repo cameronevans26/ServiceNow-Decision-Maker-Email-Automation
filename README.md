@@ -24,10 +24,11 @@ This project automates the process of querying ServiceNow for decision-maker ema
 ---
 
 ## 📂 Repository Structure
-
-`decision_maker_email.py` # Python script for querying ServiceNow and sending emails
-`decision_maker_email.yml` # Ansible playbook to run the script for multiple servers
-`vault.yml` # Encrypted vault file with ServiceNow credentials (not in repo)
+```
+decision_maker_email.py # Python script for querying ServiceNow and sending emails
+decision_maker_email.yml # Ansible playbook to run the script for multiple servers
+vault.yml # Encrypted vault file with ServiceNow credentials (not in repo)
+```
 
 ## 📝 Setup Instructions
 
